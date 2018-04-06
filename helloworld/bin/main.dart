@@ -35,5 +35,9 @@ main(List<String> arguments) {
   List parts = hello.split(" ");
   print(parts);
   print(parts[0]);
+
+  const String password = "hihihihihi";
+  //password = "hahahahaha"; error
+  
   print('Hello world: ${helloworld.calculate()}!');
 }
