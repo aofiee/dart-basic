@@ -33,4 +33,31 @@ main(List<String> arguments) {
     print("Size ${stat.size}");
     print("-----------------------------");
   });
+
+  Directory rw = Directory.current;
+  print("Path ${rw.path}");
+  File file = new File(rw.path+"/myfile.txt");
+  writeFile(file);
+  readFile(file);
+}
+
+void writeFile(File file){
+  //Append , Write
+  RandomAccessFile raf = file.openSync(mode: FileMode.APPEND);
+  raf.writeStringSync("Hello World");
+  raf.flushSync();
+  raf.close();
+}
+
+void readFile(File file){
+  if(!file.existsSync()){
+    print("file not found");
+    return;
+  }
+  print("Reading ....");
+  print(file.readAsStringSync());
+  print("Reading byte.....");
+  List values = file.readAsBytesSync();
+  values.forEach((value) => print(value));
+
 }
