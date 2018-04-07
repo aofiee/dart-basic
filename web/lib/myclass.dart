@@ -1,3 +1,3 @@
 class MyClass {
-  void sayHello(String name) => print('Hello ${name}');
+  void sayHello(String name) => print('MyClass Hello ${name}');
 }

@@ -1,4 +1,5 @@
 class Animal {
+  static int _counter = 0;
   String _name = '';
   int _age = 0;
   String bread = '';
@@ -15,6 +16,8 @@ class Animal {
     this._name = name; 
     _age = age;
     this.bread = bread;
+    _counter++;
+    print("counter ${_counter}");
   }
 
   void sayHello(){
@@ -32,4 +35,7 @@ class Animal {
   }
 
   void saySomething(String message) => this._display(message);
+  static void run(){
+    print("object");
+  }
 }
